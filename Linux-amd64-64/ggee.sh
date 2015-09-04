@@ -1,11 +1,11 @@
 #!/bin/bash
 library=ggee
+version=$(cat VERSION)
 platform=$(uname -s)
 arch=$(dpkg --print-architecture)
 bit=64
 pdsrcdir=/home/roman/pd-src
 librarydir=${pdsrcdir}/externals/${library}
-version=$(cat VERSION)
 pddir=${pdsrcdir}/pd/
 workspacedir=${pdsrcdir}/workspace/${platform}-${arch}-${bit}
 remoteworkspacedir=${workspacedir}
