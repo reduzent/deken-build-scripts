@@ -1,0 +1,21 @@
+#!/bin/bash
+(
+  cd $librarydir
+  # clean area
+  rm -rf ${workspacedir}/${library}
+  make clean
+  
+  # build
+  if ! ( make PD_PATH=${pddir} && \
+         make pkglibdir=${workspacedir} install )
+  then
+    echo "error while building"
+    exit 1
+  fi
+  
+  # create version-file
+  echo "$version" > ${workspacedir}/${library}/VERSION.txt
+  
+  # copy
+  rsync -av --delete ${workspacedir}/${library} ${remotehost}:${remoteworkspacedir}/.
+)
