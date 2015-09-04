@@ -7,7 +7,7 @@ pddir=${pdsrcdir}/pd/
 platform=$(basename $(pwd))
 workspacedir=${pdsrcdir}/workspace/${platform}
 remoteworkspacedir=${workspacedir}
-remotehost=netpd.org
+remotehost=roman@netpd.org
 
 cp ${library}.patch $librarydir
 
