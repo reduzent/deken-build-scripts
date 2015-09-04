@@ -11,7 +11,7 @@ workspacedir=${pdsrcdir}/workspace/${platform}-${arch}-${bit}
 remoteworkspacedir=${workspacedir}
 remotehost=netpd.org
 
-cp readdir.patch $librarydir
+cp ${library}.patch $librarydir
 
 (
   cd $librarydir
