@@ -15,6 +15,7 @@ remotehost=netpd.org
 (
   cd $librarydir
   # clean area
+  rm -rf ${workspacedir}/${library}
   make clean
   
   # build
