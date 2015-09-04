@@ -23,7 +23,7 @@ cp readdir.patch $librarydir
   rm -rf readdir-meta.pd Makefile
   
   # apply patch
-  patch -p0 < fix-readdir.patch
+  patch -p0 < readdir.patch
 )
 
 . _common_build
