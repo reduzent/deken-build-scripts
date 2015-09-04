@@ -11,4 +11,18 @@ workspacedir=${pdsrcdir}/workspace/${platform}-${arch}-${bit}
 remoteworkspacedir=${workspacedir}
 remotehost=netpd.org
 
+cp ${library}.patch $librarydir
+
+(
+  cd $librarydir
+  
+  # clean area
+  rm -rf LICENSE.txt README.txt slipenc-meta.pd Makefile
+  
+  # apply patch
+  patch -p0 < ${library}.patch
+
+  make clean
+)
+
 . _common_build
