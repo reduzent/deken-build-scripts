@@ -1,0 +1,36 @@
+#!/bin/bash
+(
+  cd $librarydir
+  # clean area
+  rm -rf ${workspacedir}/${library}
+  make clean
+  
+  # build
+  if ! ( \
+    make \
+	UNAME=MINGW \
+	CC=i686-w64-mingw32-gcc \
+	PD_PATH=${pddir} \
+	PD_INCLUDE=${pddir}/src
+	CFLAGS="" \
+	LDFLAGS="-Wl,-l:pd.dll -Wl,--enable-auto-image-base" \
+	LIBS="-lpthread" && \
+    make \
+        UNAME=MINGW \
+        CC=i686-w64-mingw32-gcc \
+        PD_PATH=${pddir} CFLAGS="" \
+        LDFLAGS="-Wl,-l:pd.dll -Wl,--enable-auto-image-base" \
+        LIBS="-lpthread" && \
+	pkglibdir=${workspacedir} \
+	install )
+  then
+    echo "error while building"
+    exit 1
+  fi
+  
+  # create version-file
+  echo "$version" > ${workspacedir}/${library}/VERSION.txt
+  
+  # copy
+  rsync -av --delete ${workspacedir}/${library} ${remotehost}:${remoteworkspacedir}/.
+)
