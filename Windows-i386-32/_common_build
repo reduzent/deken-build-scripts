@@ -1,21 +1,11 @@
 #!/bin/bash
 (
   cd $librarydir
-  # clean area
+  # clean target area
   rm -rf ${workspacedir}/${library}
-  make clean
   
   # build
-  if ! ( \
-    make \
-	UNAME=MINGW \
-	CC=i686-w64-mingw32-gcc \
-	PD_PATH=${pddir} \
-	PD_INCLUDE=${pddir}/src \
-	CFLAGS="" \
-	LDFLAGS="-Wl,-l:pd.dll -Wl,--enable-auto-image-base" \
-	LIBS="-lpthread" && \
-    make \
+  if ! ( make \
         UNAME=MINGW \
         CC=i686-w64-mingw32-gcc \
         PD_PATH=${pddir} CFLAGS="" \
@@ -28,6 +18,9 @@
     echo "error while building"
     exit 1
   fi
+
+  # clean build area
+  make UNAME=MINGW LDFLAGS="-Wl,-l:pd.dll -Wl,--enable-auto-image-base" clean
   
   # create version-file
   echo "$version" > ${workspacedir}/${library}/VERSION.txt
