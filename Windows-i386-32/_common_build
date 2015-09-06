@@ -11,7 +11,7 @@
 	UNAME=MINGW \
 	CC=i686-w64-mingw32-gcc \
 	PD_PATH=${pddir} \
-	PD_INCLUDE=${pddir}/src
+	PD_INCLUDE=${pddir}/src \
 	CFLAGS="" \
 	LDFLAGS="-Wl,-l:pd.dll -Wl,--enable-auto-image-base" \
 	LIBS="-lpthread" && \
@@ -19,8 +19,9 @@
         UNAME=MINGW \
         CC=i686-w64-mingw32-gcc \
         PD_PATH=${pddir} CFLAGS="" \
+	PD_INCLUDE=${pddir}/src \
         LDFLAGS="-Wl,-l:pd.dll -Wl,--enable-auto-image-base" \
-        LIBS="-lpthread" && \
+        LIBS="-lpthread" \
 	pkglibdir=${workspacedir} \
 	install )
   then
