@@ -5,7 +5,7 @@
   rm -rf ${workspacedir}/${library}
   
   # build
-  if ! make PD_PATH=${pddir} pkglibdir=${workspacedir} install
+  if ! make LIBRARY_NAME=${library} PD_PATH=${pddir} pkglibdir=${workspacedir} install
   then
     echo "error while building"
     exit 1
