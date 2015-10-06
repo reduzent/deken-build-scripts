@@ -6,6 +6,23 @@
   
   # build
   if ! ( make \
+        $MAKEFLAGS \
+        UNAME=MINGW \
+        CC=i686-w64-mingw32-gcc \
+        PD_PATH=${pddir} CFLAGS="" \
+	PD_INCLUDE=${pddir}/src \
+        LDFLAGS="-Wl,-l:pd.dll -Wl,--enable-auto-image-base" \
+        LIBS="-lpthread" \
+	pkglibdir=${workspacedir} \
+        )
+  then
+    echo "error while building"
+    exit 1
+  fi
+
+  # install
+  if ! ( make \
+        $MAKEFLAGS \
         UNAME=MINGW \
         CC=i686-w64-mingw32-gcc \
         PD_PATH=${pddir} CFLAGS="" \
@@ -15,7 +32,7 @@
 	pkglibdir=${workspacedir} \
 	install )
   then
-    echo "error while building"
+    echo "error while installing"
     exit 1
   fi
 

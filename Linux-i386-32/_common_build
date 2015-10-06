@@ -5,12 +5,19 @@
   rm -rf ${workspacedir}/${library}
   
   # build
-  if ! make LIBRARY_NAME=${library} PD_PATH=${pddir} pkglibdir=${workspacedir} install
+  if ! make $MAKEFLAGS LIBRARY_NAME=${library} PD_PATH=${pddir} pkglibdir=${workspacedir}
   then
     echo "error while building"
     exit 1
   fi
   
+  # install
+  if ! make $MAKEFLAGS LIBRARY_NAME=${library} PD_PATH=${pddir} pkglibdir=${workspacedir} install
+  then
+    echo "error while installing"
+    exit 1
+  fi
+
   # clean build area
   make clean
   
