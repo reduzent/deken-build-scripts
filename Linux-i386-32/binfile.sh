@@ -2,7 +2,7 @@
 . _common_vars
 
 library=binfile
-librarydir=${pdsrcdir}/externals/mrpeach/${library}
+librarydir=${pdsrcdir}/mrpeach/${library}
 version=0.1
 
 . _common_build
