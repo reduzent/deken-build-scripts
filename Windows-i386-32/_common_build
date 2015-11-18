@@ -7,12 +7,11 @@
   # build
   if ! ( make \
         $MAKEFLAGS \
-        UNAME=MINGW \
+        uname=MINGW \
         CC=i686-w64-mingw32-gcc \
-        PD_PATH=${pddir} CFLAGS="" \
-	PD_INCLUDE=${pddir}/src \
-        LDFLAGS="-Wl,-l:pd.dll -Wl,--enable-auto-image-base" \
-        LIBS="-lpthread" \
+        pdbinpath=${pddir}/bin/ \
+        pdincludepath=${pddir}/src/
+        CFLAGS="" \
 	pkglibdir=${workspacedir} \
         )
   then
@@ -23,12 +22,11 @@
   # install
   if ! ( make \
         $MAKEFLAGS \
-        UNAME=MINGW \
+        uname=MINGW \
         CC=i686-w64-mingw32-gcc \
-        PD_PATH=${pddir} CFLAGS="" \
-	PD_INCLUDE=${pddir}/src \
-        LDFLAGS="-Wl,-l:pd.dll -Wl,--enable-auto-image-base" \
-        LIBS="-lpthread" \
+        pdbinpath=${pddir}/bin/ \
+        pdincludepath=${pddir}/src/
+        CFLAGS="" \
 	pkglibdir=${workspacedir} \
 	install )
   then
@@ -37,7 +35,7 @@
   fi
 
   # clean build area
-  make UNAME=MINGW LDFLAGS="-Wl,-l:pd.dll -Wl,--enable-auto-image-base" clean
+  make uname=MINGW clean
   
   # create version-file
   echo "$version" > ${workspacedir}/${library}/VERSION.txt
