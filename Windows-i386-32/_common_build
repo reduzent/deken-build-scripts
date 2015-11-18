@@ -10,9 +10,9 @@
         uname=MINGW \
         CC=i686-w64-mingw32-gcc \
         pdbinpath=${pddir}/bin/ \
-        pdincludepath=${pddir}/src/
+        pdincludepath=${pddir}/src/ \
         CFLAGS="" \
-	pkglibdir=${workspacedir} \
+	pkglibdir=${workspacedir}
         )
   then
     echo "error while building"
@@ -25,7 +25,7 @@
         uname=MINGW \
         CC=i686-w64-mingw32-gcc \
         pdbinpath=${pddir}/bin/ \
-        pdincludepath=${pddir}/src/
+        pdincludepath=${pddir}/src/ \
         CFLAGS="" \
 	pkglibdir=${workspacedir} \
 	install )
