@@ -3,5 +3,5 @@ pdsrcdir=/Users/roman/pd-src
 pddir=${pdsrcdir}/pd/
 platform=$(basename $(pwd))
 workspacedir=${pdsrcdir}/workspace/${platform}
-remoteworkspacedir=${workspacedir}
+remoteworkspacedir=/home/roman/pd-src/workspace/${platform}
 remotehost=roman@netpd.org
