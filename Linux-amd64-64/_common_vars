@@ -1,7 +1,1 @@
-#!/bin/bash
-pdsrcdir=/home/roman/pd-src
-pddir=${pdsrcdir}/pd/
-platform=$(basename $(pwd))
-workspacedir=${pdsrcdir}/workspace/${platform}
-remoteworkspacedir=${workspacedir}
-remotehost=roman@netpd.org
+../Linux-i386-32/_common_vars
