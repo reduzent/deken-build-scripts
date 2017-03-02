@@ -1,0 +1,21 @@
+#!/bin/bash
+(
+  cd $librarydir
+
+  # clean build area
+  make clean
+
+  # clean target area
+  rm -rf ${workspacedir}/${library}
+
+  # copy sources
+  mkdir -p ${workspacedir}/${library}
+  git-archive-all.sh -- - | tar -x -C ${workspacedir}/${library}
+  rm -rf ${workspacedir}/${library}/.gitmodules
+   
+  # create version-file
+  echo "$version" > ${workspacedir}/${library}/VERSION.txt
+  
+  # copy
+  rsync -av --delete ${workspacedir}/${library} ${remotehost}:${remoteworkspacedir}/.
+)
