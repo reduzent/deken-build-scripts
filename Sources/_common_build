@@ -1,4 +1,12 @@
 #!/bin/bash
+# Generate objects.txt File
+pd \
+  -batch \
+  -open _objectlist.pd \
+  -send "METAFILE ${librarydir}/${library}-meta.pd" 2>&1 | \
+  sed 's/ /    /' \
+  > "${workspacedir}/${library}-v${version}-objects.txt"
+
 (
   cd $librarydir
 
@@ -17,5 +25,5 @@
   echo "$version" > ${workspacedir}/${library}/VERSION.txt
   
   # copy
-  rsync -av --delete ${workspacedir}/${library} ${remotehost}:${remoteworkspacedir}/.
+  #rsync -av --delete ${workspacedir}/${library} ${remotehost}:${remoteworkspacedir}/.
 )
