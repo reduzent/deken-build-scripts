@@ -1,11 +1,18 @@
 #!/bin/bash
 # Generate objects.txt File
-pd \
-  -batch \
-  -open _objectlist.pd \
-  -send "METAFILE ${librarydir}/${library}-meta.pd" 2>&1 | \
-  sed 's/ /    /' \
+sed \
+  -n '/^#N canvas [0-9]* [0-9]* [0-9]* [0-9]* OBJECTS/,/^#X restore [0-9]* [0-9]* pd OBJECTS/{/#N canvas [0-9]* [0-9]* [0-9]* [0-9]* OBJECTS/{p;n};/#X restore [0-9]* [0-9]* pd OBJECTS/{q};p}' \
+  ${librarydir}/${library}-meta.pd | \
+  sed -e :a -e '/;/b' -e N -e 's/\n/ /' -e ba | \
+  sed '/^#X text/!d;s/#X text [0-9]* [0-9]* //;s/ /       /;s/;$//' \
   > "${workspacedir}/${library}-v${version}-objects.txt"
+
+#pd \
+#  -batch \
+#  -open _objectlist.pd \
+#  -send "METAFILE ${librarydir}/${library}-meta.pd" 2>&1 | \
+#  sed 's/ /    /' \
+#  > "${workspacedir}/${library}-v${version}-objects.txt"
 
 (
   cd $librarydir
