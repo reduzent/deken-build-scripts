@@ -2,7 +2,7 @@
 . _common_vars
 
 library=ggee
-librarydir=${pdsrcdir}/${library}
+librarydir=${pdsrcdir}/pd-${library}
 version=$(sed -n \
       's|^\#X text [0-9][0-9]* [0-9][0-9]* VERSION \(.*\);|\1|p' \
       ${librarydir}/${library}-meta.pd\
