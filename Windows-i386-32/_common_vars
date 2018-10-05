@@ -5,3 +5,4 @@ platform=$(basename $(pwd))
 workspacedir=${pdsrcdir}/workspace/${platform}
 remoteworkspacedir=${workspacedir}
 remotehost=roman@netpd.org
+datecommand="date -d @"
