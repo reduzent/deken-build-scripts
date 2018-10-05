@@ -1,0 +1,7 @@
+#!/bin/bash
+pdsrcdir=~/pd-src
+pddir=~/.wine/drive_c/pd_x86-64/
+platform=$(basename $(pwd))
+workspacedir=${pdsrcdir}/workspace/${platform}
+remoteworkspacedir=${workspacedir}
+remotehost=roman@netpd.org
