@@ -1,6 +1,6 @@
 #!/bin/bash
 pdsrcdir=~/pd-src
-pddir=~/.wine/drive_c/Pd/
+pddir=~/.wine/drive_c/pd_i386/
 platform=$(basename $(pwd))
 workspacedir=${pdsrcdir}/workspace/${platform}
 remoteworkspacedir=${workspacedir}
