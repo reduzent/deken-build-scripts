@@ -44,4 +44,4 @@ do
 done
 
 # finally upload all created packages
-deken upload $(find ${workspacedir} -regex ".*/${library}-v${version}-\(.*\)-externals\.\(tar\.gz\|zip\)" -exec echo -n "{} " \;)
+deken upload $(find ${workspacedir} -regex ".*/${library}-v${version}-\(.*\)-externals\.dek" -exec echo -n "{} " \;)
