@@ -19,7 +19,7 @@
   fi
 
   # clean build area
-  make clean
+  make $MAKEFLAGS clean
   
   # create version-file
   echo "$version" > ${workspacedir}/${library}/VERSION.txt
