@@ -6,3 +6,4 @@ workspacedir=${pdsrcdir}/workspace/${platform}
 remoteworkspacedir=${workspacedir}
 remotehost=roman@netpd.org
 datecommand="date -d @"
+MAKEFLAGS="uname=MINGW CC=i686-w64-mingw32-gcc pdbinpath=${pddir}/bin/"
