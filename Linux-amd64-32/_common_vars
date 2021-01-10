@@ -6,4 +6,4 @@ workspacedir=${pdsrcdir}/workspace/${platform}
 remoteworkspacedir=pd-src/workspace/${platform}
 remotehost=roman@netpd.org
 datecommand="date -d @"
-MAKEFLAGS="CC=x86_64-linux-gnu-gcc-7"
+MAKEFLAGS="CC=x86_64-linux-gnu-gcc-9"
