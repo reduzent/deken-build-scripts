@@ -1,8 +1,8 @@
 #!/bin/bash
 . _common_vars
 
-library=fluid~
+library=fluidsynth~
 librarydir=${pdsrcdir}/pd-fluidsynth
 # Extract version from meta file and append git ~version
-version=~20200107
+version=~20200110
 . _common_build
