@@ -1,7 +1,7 @@
 #!/bin/bash
 . _common_vars
 
-library=osc
+library=aoo
 librarydir=${pdsrcdir}/aoo/pd
 version="2.0-pre2"
 
