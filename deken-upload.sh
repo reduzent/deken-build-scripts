@@ -36,7 +36,7 @@ do
   if [ -d "${workspacedir}/${arch}/${library}" ]
   then
     ( cd ${workspacedir}/$arch
-      deken package --version "$(cat ${library}/VERSION.txt)" "$library"
+      deken package --default-floatsize 32 --version "$(cat ${library}/VERSION.txt)" "$library"
     )
   else
     echo "There is no '$library' library in '$arch' arch."
@@ -44,4 +44,4 @@ do
 done
 
 # finally upload all created packages
-deken upload $(find ${workspacedir} -regex ".*/${library}-v${version}-\(.*\)-externals\.dek" -exec echo -n "{} " \;)
+deken upload $(find ${workspacedir} -regex ".*/${library}\[v${version}\]\(.*\)\.dek" -exec echo -n "{} " \;)
