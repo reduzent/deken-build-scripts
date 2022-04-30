@@ -2,7 +2,7 @@
 . _common_vars
 
 library=binfile
-librarydir=${pdsrcdir}/mrpeach/${library}
+librarydir=${pdsrcdir}/${library}
 # Extract version from meta file and append git ~version
 version=$(sed -n \
       's|^\#X text [0-9][0-9]* [0-9][0-9]* VERSION \(.*\);|\1|p' \
