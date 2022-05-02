@@ -18,6 +18,15 @@
     exit 1
   fi
 
+  # localdep
+  if $localdep; then
+    if ! make $MAKEFLAGS PDDIR=${pddir} PDLIBDIR=${workspacedir} localdep_linux
+    then
+      echo "error while adding dependencies locally"
+      exit 1
+    fi
+  fi
+
   # clean build area
   make $MAKEFLAGS clean
 
