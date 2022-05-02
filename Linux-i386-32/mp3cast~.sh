@@ -1,12 +1,11 @@
 #!/bin/bash
 . _common_vars
 
-library=ggee
-librarydir=${pdsrcdir}/${library}
+library=mp3cast~
+librarydir=${pdsrcdir}/mp3cast
 version=$(sed -n \
       's|^\#X text [0-9][0-9]* [0-9][0-9]* VERSION \(.*\);|\1|p' \
-      ${librarydir}/${library}-meta.pd\
-      )
-
+      ${librarydir}/${library}-meta.pd)
+localdep=true
 
 . _common_build

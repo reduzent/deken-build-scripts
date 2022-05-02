@@ -1,9 +1,11 @@
 #!/bin/bash
 pdsrcdir=~/pd-src
-pddir=~/.wine/drive_c/pd_x86-64/
+pddir=~/Downloads/pd-msw-amd64
 platform=$(basename $(pwd))
 workspacedir=${pdsrcdir}/workspace/${platform}
 remoteworkspacedir=${workspacedir}
 remotehost=roman@netpd.org
 datecommand="date -d @"
+localdep=false
+ocaldep_platform=win
 MAKEFLAGS="uname=MINGW CC=x86_64-w64-mingw32-gcc pdbinpath=${pddir}/bin/"
