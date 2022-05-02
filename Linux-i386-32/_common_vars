@@ -7,4 +7,5 @@ remoteworkspacedir=pd-src/workspace/${platform}
 remotehost=roman@netpd.org
 datecommand="date -d @"
 localdep=false
+localdep_platform=linux
 MAKEFLAGS="CC=i686-linux-gnu-gcc"

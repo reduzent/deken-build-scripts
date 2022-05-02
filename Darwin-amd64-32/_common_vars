@@ -6,3 +6,5 @@ workspacedir=${pdsrcdir}/workspace/${platform}
 remoteworkspacedir=/home/roman/pd-src/workspace/${platform}
 remotehost=roman@netpd.org
 datecommand="date -r "
+localdep=false
+localdep_platform=macos

@@ -20,7 +20,7 @@
 
   # localdep
   if $localdep; then
-    if ! make $MAKEFLAGS PDDIR=${pddir} PDLIBDIR=${workspacedir} localdep_linux
+    if ! make $MAKEFLAGS PDDIR=${pddir} PDLIBDIR=${workspacedir} localdep_${localdep_platform}
     then
       echo "error while adding dependencies locally"
       exit 1
