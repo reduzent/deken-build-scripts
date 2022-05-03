@@ -8,3 +8,4 @@ remotehost=roman@netpd.org
 datecommand="date -r "
 localdep=false
 localdep_platform=macos
+MAKEFLAGS="CPPFLAGS+=-I/opt/homebrew/include LDFLAGS+=-L/opt/homebrew/lib extension=d_arm64"
