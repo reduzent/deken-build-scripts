@@ -2,7 +2,10 @@
 . _common_vars
 
 library=fluidsynth~
-librarydir=${pdsrcdir}/pd-fluidsynth
-# Extract version from meta file and append git ~version
-version=~20200110
+librarydir=${pdsrcdir}/fluidsynth
+version=$(sed -n \
+      's|^\#X text [0-9][0-9]* [0-9][0-9]* VERSION \(.*\);|\1|p' \
+      ${librarydir}/${library}-meta.pd)
+localdep=true
+
 . _common_build
