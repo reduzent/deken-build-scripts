@@ -8,4 +8,4 @@ remotehost=roman@netpd.org
 datecommand="date -d @"
 localdep=false
 localdep_platform=linux
-MAKEFLAGS="CC=arm-linux-gnueabihf-gcc CFLAGS=\"-march=armv7\""
+MAKEFLAGS="CC=arm-linux-gnueabihf-gcc CFLAGS=\"-march=armv7\" extension=l_arm"
