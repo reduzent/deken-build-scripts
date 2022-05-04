@@ -8,4 +8,4 @@ remotehost=roman@netpd.org
 datecommand="date -d @"
 localdep=false
 localdep_platform=linux
-MAKEFLAGS="CC=i686-linux-gnu-gcc"
+MAKEFLAGS="CC=i686-linux-gnu-gcc extension=l_i386"
