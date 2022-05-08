@@ -1,11 +1,11 @@
 #!/bin/bash
 pdsrcdir=~/pd-src
-pddir=~/Downloads/pd-msw-amd64
+pddir=/mingw64
 platform=$(basename $(pwd))
 workspacedir=${pdsrcdir}/workspace/${platform}
 remoteworkspacedir=${workspacedir}
 remotehost=roman@netpd.org
 datecommand="date -d @"
 localdep=false
-ocaldep_platform=win
-MAKEFLAGS="uname=MINGW CC=x86_64-w64-mingw32-gcc pdbinpath=${pddir}/bin/"
+localdep_platform=windows
+MAKEFLAGS="extension=m_amd64"
