@@ -1,6 +1,6 @@
 #!/bin/bash
 pdsrcdir=~/pd-src
-pddir=/mingw64
+pddir= ~/app/pd-msw-amd64-0.52-2
 platform=$(basename $(pwd))
 workspacedir=${pdsrcdir}/workspace/${platform}
 remoteworkspacedir=${workspacedir}
