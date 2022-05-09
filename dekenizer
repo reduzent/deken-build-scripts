@@ -1,14 +1,53 @@
 #!/bin/bash
-library=$1
+
+upload=false
+
+usage() {
+    cat >/dev/stderr <<EOF
+usage: $0 [-n] [-h] library
+  create Deken packages from a built library and upload them
+
+  -u upload resulting packages
+  -h show this help
+
+EOF
+}
+
+POSARGS=()
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -u)
+      upload=true
+      shift # past value
+      ;;
+    -h)
+      usage
+      exit
+      ;;
+    -*|--*)
+      echo "Unknown option $1"
+      exit 1
+      ;;
+    *)
+      POSARGS+=("$1") # save positional arg
+      shift # past argument
+      ;;
+  esac
+done
+
+set -- "${POSARGS[@]}" # restore positional parameters
+
+library=${POSARGS[0]}
 workspacedir="../workspace"
 
-if [ -z $library ]
-then
+
+if [ -z $library ]; then
   echo "Please specify a library for uploading"
   exit 1
 fi
 
-# Get version of package series 
+# Get version of package series
 version="$(cat ${workspacedir}/Sources/${library}/VERSION.txt)"
 
 # display version of package for each arch
@@ -25,8 +64,7 @@ done
 
 read -p "Proceed? Y/n " -n 1 proceed
 echo
-if [[ "$proceed" =~ [Nn] ]]
-then 
+if [[ "$proceed" =~ [Nn] ]]; then
   exit 1
 fi
 
@@ -47,4 +85,6 @@ do
 done
 
 # finally upload all created packages
-#deken upload $(find ${workspacedir} -regex ".*/${library}\[v${version}\]\(.*\)\.dek" -exec echo -n "{} " \;)
+if $upload; then
+  deken upload $(find ${workspacedir} -regex ".*/${library}\[v${version}\]\(.*\)\.dek" -exec echo -n "{} " \;)
+fi
