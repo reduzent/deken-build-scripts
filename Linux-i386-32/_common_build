@@ -5,6 +5,10 @@
   rm -rf ${workspacedir}/${library}
 
   # build
+  echo "====================================================="
+  echo "BUILD"
+  echo "====================================================="
+  echo "make $MAKEFLAGS PDDIR=${pddir} PDLIBDIR=${workspacedir}"
   if ! make $MAKEFLAGS PDDIR=${pddir} PDLIBDIR=${workspacedir}
   then
     echo "error while building"
@@ -12,6 +16,10 @@
   fi
 
   # install
+  echo "====================================================="
+  echo "INSTALL"
+  echo "====================================================="
+  echo "make $MAKEFLAGS PDDIR=${pddir} PDLIBDIR=${workspacedir} install"
   if ! make $MAKEFLAGS PDDIR=${pddir} PDLIBDIR=${workspacedir} install
   then
     echo "error while installing"
@@ -20,6 +28,10 @@
 
   # localdep
   if $localdep; then
+    echo "====================================================="
+    echo "LOCALDEP"
+    echo "====================================================="
+    echo "make $MAKEFLAGS PDDIR=${pddir} PDLIBDIR=${workspacedir} localdep_${localdep_platform}"
     if ! make $MAKEFLAGS PDDIR=${pddir} PDLIBDIR=${workspacedir} localdep_${localdep_platform}
     then
       echo "error while adding dependencies locally"
@@ -28,11 +40,18 @@
   fi
 
   # clean build area
+  echo "====================================================="
+  echo "CLEAN"
+  echo "====================================================="
+  echo "make $MAKEFLAGS clean"
   make $MAKEFLAGS clean
 
   # create version-file
   echo "$version" > ${workspacedir}/${library}/VERSION.txt
 
   # copy
+  echo "====================================================="
+  echo "UPLOAD"
+  echo "====================================================="
   rsync -av --delete ${workspacedir}/${library} ${remotehost}:${remoteworkspacedir}/.
 )
