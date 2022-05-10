@@ -1,0 +1,4 @@
+#!/bin/bash
+. _common_vars
+. ../templates/mp3cast~
+. _common_build

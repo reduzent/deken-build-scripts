@@ -1,0 +1,4 @@
+#!/bin/bash
+. _common_vars
+. ../templates/midifile
+. _common_build

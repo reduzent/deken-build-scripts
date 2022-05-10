@@ -1,0 +1,4 @@
+#!/bin/bash
+. _common_vars
+. "../templates/else"
+. _common_build
