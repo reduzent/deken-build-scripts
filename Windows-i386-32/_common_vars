@@ -1,11 +1,4 @@
-#!/bin/bash
-pdsrcdir=~/pd-src
-pddir=~/Downloads/pd-msw-i386
-platform=$(basename $(pwd))
-workspacedir=${pdsrcdir}/workspace/${platform}
-remoteworkspacedir=${workspacedir}
-remotehost=roman@netpd.org
-datecommand="date -d @"
-localdep=false
-ocaldep_platform=win
-MAKEFLAGS="uname=MINGW CC=i686-w64-mingw32-gcc pdbinpath=${pddir}/bin/"
+. ../templates/_common_vars
+pddir="${HOME}/app/pd-msw-i386"
+localdep_platform=windows
+MAKEFLAGS="uname=MINGW CC=i686-w64-mingw32-gcc"
