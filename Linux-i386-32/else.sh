@@ -1,1 +1,0 @@
-../Windows-amd64-32/else.sh

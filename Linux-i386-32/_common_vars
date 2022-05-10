@@ -1,11 +1,3 @@
-#!/bin/bash
-pdsrcdir=~/pd-src
-pddir=${pdsrcdir}/pd/
-platform=$(basename $(pwd))
-workspacedir=${pdsrcdir}/workspace/${platform}
-remoteworkspacedir=pd-src/workspace/${platform}
-remotehost=roman@netpd.org
-datecommand="date -d @"
-localdep=false
+. ../templates/_common_vars
 localdep_platform=linux
 MAKEFLAGS="CC=i686-linux-gnu-gcc extension=l_i386"
