@@ -53,5 +53,7 @@
   echo "====================================================="
   echo "UPLOAD"
   echo "====================================================="
+
+  echo "rsync -av --delete ${workspacedir}/${library} ${remotehost}:${remoteworkspacedir}/."
   rsync -av --delete ${workspacedir}/${library} ${remotehost}:${remoteworkspacedir}/.
 )
