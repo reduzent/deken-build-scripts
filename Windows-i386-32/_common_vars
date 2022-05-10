@@ -1,4 +1,4 @@
 . ../templates/_common_vars
-pddir="${HOME}/app/pd-msw-i386"
+pddir="${HOME}/app/pd-msw-i386-0.52-2"
 localdep_platform=windows
 MAKEFLAGS="uname=MINGW CC=i686-w64-mingw32-gcc"

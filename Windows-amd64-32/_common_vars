@@ -1,3 +1,4 @@
 . ../templates/_common_vars
+pddir="${HOME}/app/pd-msw-amd64-0.52-2"
 localdep_platform=windows
 MAKEFLAGS="extension=m_amd64"
