@@ -1,4 +1,0 @@
-#!/bin/bash
-. _common_vars
-. ../templates/command
-. _common_build
