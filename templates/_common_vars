@@ -1,6 +1,6 @@
 #!/bin/bash
 pdsrcdir="${HOME}/pd-src"
-pddir="${HOME}/${pdsrcdir}/pure-data"
+pddir="${pdsrcdir}/pure-data"
 platform="$(basename $(pwd))"
 workspacedir="${pdsrcdir}/workspace/${platform}"
 remoteworkspacedir="${workspacedir}"
