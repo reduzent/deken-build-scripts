@@ -1,0 +1,11 @@
+#!/bin/bash
+pdsrcdir="${HOME}/pd-src"
+pddir="${HOME}/${pdsrcdir}/pure-data"
+platform="$(basename $(pwd))"
+workspacedir="${pdsrcdir}/workspace/${platform}"
+remoteworkspacedir="${workspacedir}"
+remotehost="roman@netpd.org"
+datecommand="date -d @"
+localdep=false
+localdep_platform=
+MAKEFLAGS=""

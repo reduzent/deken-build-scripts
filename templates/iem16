@@ -1,0 +1,3 @@
+library=iem16
+librarydir=${pdsrcdir}/${library}
+version=0.0~git20170228
