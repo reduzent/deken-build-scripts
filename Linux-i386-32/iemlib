@@ -1,0 +1,4 @@
+#!/bin/bash
+. _common_vars
+. ../templates/iemlib
+. _common_build

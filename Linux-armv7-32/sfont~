@@ -1,0 +1,4 @@
+#!/bin/bash
+. _common_vars
+. ../templates/sfont~
+. _common_build

@@ -1,11 +1,3 @@
-#!/bin/bash
-pdsrcdir=~/pd-src
-pddir=${pdsrcdir}/pure-data
-platform=$(basename $(pwd))
-workspacedir=${pdsrcdir}/workspace/${platform}
-remoteworkspacedir=/home/roman/pd-src/workspace/${platform}
-remotehost=roman@netpd.org
-datecommand="date -r "
-localdep=false
+. ../templates/_common_vars
 localdep_platform=macos
 MAKEFLAGS="CPPFLAGS+=-I/opt/homebrew/include LDFLAGS+=-L/opt/homebrew/lib extension=d_arm64"

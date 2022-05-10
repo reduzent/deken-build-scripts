@@ -1,11 +1,4 @@
-#!/bin/bash
-pdsrcdir=~/pd-src
-pddir= ~/app/pd-msw-amd64-0.52-2
-platform=$(basename $(pwd))
-workspacedir=${pdsrcdir}/workspace/${platform}
-remoteworkspacedir=${workspacedir}
-remotehost=roman@netpd.org
-datecommand="date -d @"
-localdep=false
+. ../templates/_common_vars
+pddir="${HOME}/app/pd-msw-amd64-0.52-2"
 localdep_platform=windows
 MAKEFLAGS="extension=m_amd64"
