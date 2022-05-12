@@ -1,4 +1,4 @@
 #!/bin/bash
 . _common_vars
-. ../templates/iem16
+. "../templates/$(basename $0)"
 . _common_build

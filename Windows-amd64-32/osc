@@ -1,4 +1,4 @@
 #!/bin/bash
 . _common_vars
-. ../templates/osc
+. "../templates/$(basename $0)"
 . _common_build
