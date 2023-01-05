@@ -1,0 +1,4 @@
+#!/bin/bash
+. _common_vars
+. "../templates/$(basename $0)"
+. _common_build

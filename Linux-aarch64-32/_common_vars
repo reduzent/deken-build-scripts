@@ -1,0 +1,2 @@
+. ../templates/_common_vars
+localdep_platform=linux
