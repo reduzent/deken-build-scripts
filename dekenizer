@@ -4,7 +4,7 @@ upload=false
 
 usage() {
     cat >/dev/stderr <<EOF
-usage: $0 [-n] [-h] library
+usage: $0 [-u] [-h] library
   create Deken packages from a built library and upload them
 
   -u upload resulting packages
